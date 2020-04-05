@@ -1,0 +1,57 @@
+@import url('./normelize.css');
+@import url('./element-ui.scss');
+/* @import url('./element-variables.scss');*/
+
+
+:root {
+  font-size: 16px;
+  --theme-color: #3E92FE;
+}
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.page-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.shou {
+  cursor: pointer;
+}
+
+// element-ui 样式调整
+.el-carousel__button {
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50%;
+  background-color: #fff !important;
+}
+
+.el-carousel__indicator--horizontal {
+  padding: 12px 27px !important;
+}
+
+.is-active .el-carousel__button {
+  background-color: #3E92FE !important;
+}
+
+.el-form-item__label {
+  font-size: 16px !important;
+}

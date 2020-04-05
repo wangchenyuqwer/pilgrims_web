@@ -1,32 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <w-header v-if="showHead"></w-header>
+    <router-view />
+    <w-footer v-if="showHead"></w-footer>
   </div>
 </template>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import wHeader from "./components/webHeader";
+import wFooter from "./components/webFooter";
+export default {
+  components: {
+    wHeader,
+    wFooter
+  },
+  computed: {
+    showHead() {
+      if (this.$route.meta.showHead === undefined) {
+        return true;
+      }
+      return this.$route.meta.showHead;
     }
   }
-}
+};
+</script>
+<style lang="scss">
+@import url("~assets/css/base.scss");
 </style>
